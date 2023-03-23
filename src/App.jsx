@@ -1,17 +1,12 @@
-import { useEffect, useState, useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Movie from "./components/Movie";
 import PageController from "./components/PageController";
 import Spinner from "./components/Spinner";
-import { gsap } from "gsap-trial";
-import { ScrollTrigger } from "gsap-trial/ScrollTrigger";
-import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
 
 const App = () => {
       const [data, setData] = useState(false);
       const [pag, setPag] = useState(false);
-
-      gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
       const path = document.location.pathname;
 
@@ -46,14 +41,6 @@ const App = () => {
               getData();
           }
       }, [path])
-
-    useLayoutEffect(() => {
-            ScrollSmoother.create({
-                smooth: 1,
-                effects: true,
-                smoothTouch: 0.2,
-            })
-        });
 
   return (
       <div id="smooth-wrapper">
