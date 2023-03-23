@@ -19,7 +19,6 @@
     "server": "nodemon ../server/index.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "postinstall": "npm ci --prefix movie-app-client",
     "client": "react-scripts start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "react-scripts test",
